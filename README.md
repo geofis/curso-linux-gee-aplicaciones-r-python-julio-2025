@@ -72,7 +72,7 @@ si las realizas, te servirán para reforzar lo aprendido en cada sesión.
 
 - [Bienvenida](https://geofis.github.io/curso-linux-gee-aplicaciones-r-python-julio-2025/media/bienvenida.html)
 
-- \[Motivación\](<https://geofis.github.io/curso-linux-gee-aplicaciones-r-python-julio-2025/media/motivacion.html>
+- [Motivación](https://geofis.github.io/curso-linux-gee-aplicaciones-r-python-julio-2025/media/motivacion.html)
 
 ## Temáticos
 
