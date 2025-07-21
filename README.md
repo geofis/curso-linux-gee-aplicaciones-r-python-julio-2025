@@ -1,0 +1,1 @@
+# curso-linux-gee-aplicaciones-r-python-julio-2025-nivel-b-sico
