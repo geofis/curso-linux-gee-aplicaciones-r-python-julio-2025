@@ -105,7 +105,7 @@ Cada día, dejaré prácticas para realizar en casa. Son voluntarias, pero si la
 
 - [Bienvenida](`r paste0(github_pages_url_general, 'media/bienvenida.html')`)
 
-- [Motivación](`r paste0(github_pages_url_general, 'media/motivacion.html')`s
+- [Motivación](`r paste0(github_pages_url_general, 'media/motivacion.html')`
 
 ## Temáticos
 
