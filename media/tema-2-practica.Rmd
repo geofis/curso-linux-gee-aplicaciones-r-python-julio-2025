@@ -1,6 +1,6 @@
 ---
 title: "Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico"
-subtitle: "Tema 1. Instala y prueba una o varias distros Linux, terminal, estructura"
+subtitle: "Tema 2. Práctica. Aprende a navegar y operar de forma avanzada en la terminal"
 author: "José Martínez"
 institute: "Universidad Autónoma de Santo Domingo (UASD)"
 date: "Actualizado: `r Sys.Date()`"
@@ -22,7 +22,7 @@ class: center, middle
 background-image: url(img/fondo.jpg)
 
 # Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico
-## Tema 2. Práctica. Comandos esenciales, tuberías, permisos
+## Tema 2. Práctica. Aprende a navegar y operar de forma avanzada en la terminal
 ### *José Martínez*
 
 ---

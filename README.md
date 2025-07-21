@@ -78,14 +78,14 @@ si las realizas, te servirán para reforzar lo aprendido en cada sesión.
 
 ### Esquema general del curso
 
-| Tema | Contenido teórico                                      | Práctica aplicada                                         |
-|------|--------------------------------------------------------|-----------------------------------------------------------|
-| 1    | Linux o GNU/Linux: kernel, filosofía, distros          | Instala y prueba una o varias distros Linux               |
-| 2    | Terminal, estructura de archivos y comandos esenciales | Aprende a navegar y operar en la terminal                 |
-| 3    | Introducción a Python para análisis espacial           | Manipula datos espaciales vectoriales y ráster con Python |
-| 4    | Introducción a R para análisis espacial                | Realiza análisis espacial básico en R                     |
-| 5    | Introducción a Google Earth Engine (GEE)               | Usa Earth Engine para analizar imágenes satelitales       |
-| 6    | Aplicaciones integradas: de lo local a lo global       | Integra GEE con R o Python para análisis reproducible     |
+| Tema | Contenido teórico                                                   | Práctica aplicada                                         |
+|------|---------------------------------------------------------------------|-----------------------------------------------------------|
+| 1    | Linux o GNU/Linux: kernel, filosofía, distros, terminal, estructura | Instala y prueba una o varias distros Linux               |
+| 2    | Comandos esenciales, tuberías, permisos                             | Aprende a navegar y operar en la terminal                 |
+| 3    | Introducción a Python para análisis espacial                        | Manipula datos espaciales vectoriales y ráster con Python |
+| 4    | Introducción a R para análisis espacial                             | Realiza análisis espacial básico en R                     |
+| 5    | Introducción a Google Earth Engine (GEE)                            | Usa Earth Engine para analizar imágenes satelitales       |
+| 6    | Aplicaciones integradas: de lo local a lo global                    | Integra GEE con R o Python para análisis reproducible     |
 
 ### Contenido teórico
 
