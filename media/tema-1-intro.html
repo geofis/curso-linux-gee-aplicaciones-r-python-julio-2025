@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="José Martínez" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico
+]
+.subtitle[
+## Tema 1. Linux o GNU/Linux: kernel, filosofía, distros, terminal, estructura
+]
+.author[
+### José Martínez
+]
+.institute[
+### Universidad Autónoma de Santo Domingo (UASD)
+]
+.date[
+### Actualizado: 2025-07-21
+]
+
+---
+
+
+
+
+class: center, middle
+background-image: url(img/fondo.jpg)
+
+# Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico
+## Tema 1. Linux o GNU/Linux: kernel, filosofía, distros, terminal, estructura
+### *José Martínez*
+
+---
+
+# Objetivos
+
+- Entender qué es GNU/Linux y su filosofía de software libre
+
+- Conocer la diferencia entre el kernel Linux y las distribuciones completas, así como la importancia del software libre en la comunidad de desarrollo.
+
+- Conocer la estructura básica de un sistema GNU/Linux, incluyendo el kernel y la shell.
+
+- Diferenciar entre el kernel Linux y las distribuciones completas (distros).
+
+- Explorar las principales distribuciones de Linux y sus características.
+
+- Evaluar las diferentes estrategias para usar Linux desde Windows, considerando las necesidades del curso.
+
+
+---
+
+- **¿Qué es GNU/Linux?**
+
+  - Introducción al sistema operativo GNU/Linux como una combinación del kernel Linux con las herramientas del proyecto GNU.
+  
+  - Distinción entre Linux (núcleo) y distribuciones completas (distros).
+  
+  - Enfoque en su naturaleza libre y de código abierto.
+
+---
+
+- **Filosofía del software libre y código abierto**
+
+  - Las 4 libertades del software libre (usar, estudiar, modificar, redistribuir).
+  
+  - Contraste con software propietario.
+  
+  - Importancia de la comunidad en el desarrollo de Linux.
+
+---
+
+- **¿Por qué usar Linux en ciencia y análisis espacial?**
+
+  - Estabilidad, seguridad, reproducibilidad, trazabilidad, automatización, compatibilidad con herramientas geoespaciales de alto nivel (R, Python, GDAL, QGIS, GEE API, etc.).
+
+---
+
+- **Kernel y shell**
+
+  - Breve introducción a la estructura de un sistema GNU/Linux: el kernel (núcleo) como gestor de recursos, y la shell (ej. bash, zsh) como interfaz de usuario.
+  
+  - Diferencia entre interfaz gráfica y terminal.
+
+---
+
+# Estructura básica del sistema de archivos
+
+- Linux organiza los archivos en una estructura jerárquica con una única raíz: `/`
+
+- Directorios principales:
+
+  - `/home`: archivos personales de los usuarios
+  - `/etc`: configuración del sistema
+  - `/bin`, `/sbin`: comandos y utilidades esenciales
+  - `/usr`: aplicaciones y librerías de usuario
+  - `/var`: archivos que cambian constantemente (logs, caché, etc.)
+  - `/tmp`: archivos temporales
+  - `/dev`: dispositivos del sistema
+
+- Todo es tratado como archivo: incluso discos, procesos y dispositivos.
+
+---
+
+# Terminal: puerta de entrada al control total
+
+- La **terminal** es una interfaz de texto para comunicarse con el sistema.
+
+- Se accede a través de una **shell**, típicamente `bash`.
+
+- Ventajas frente a la interfaz gráfica:
+  - Permite automatizar tareas
+  - Proporciona acceso completo al sistema
+  - Es más ligera y rápida
+  - Es el entorno natural para R, Python, GEE CLI y scripts
+
+- Ejemplos básicos de comandos:
+
+
+``` bash
+  pwd       # Mostrar ruta actual
+  ls        # Listar archivos
+  cd        # Cambiar de directorio
+  nano      # Editor de texto simple
+  sudo apt update   # Actualizar lista de paquetes
+```
+
+---
+
+- **Distribuciones de Linux**
+
+  - Presentación de las distribuciones más comunes (Ubuntu, Debian, Fedora, Arch, Linux Mint, etc.).
+  
+  - Mención especial a distros ligeras para equipos modestos (Lubuntu, Xubuntu).
+  
+  - Diferencias entre entornos de escritorio (GNOME, KDE, XFCE).
+
+---
+
+- **Estrategias para usar Linux desde Windows**  
+  Tabla comparativa de opciones (WSL2, máquina virtual, USB booteable, Colab, Docker, servidor remoto) ya desarrollada. Se discute cómo elegir una opción adecuada según el tipo de equipo, recursos disponibles y objetivos del curso.
+
+---
+
+&lt;div style="margin-left:-2em; margin-right:-2em; font-size:85%"&gt;
+
+## Opciones para crear un entorno Linux en Windows (1)
+
+
+| Opción | Nombre | Descripción | Requisitos | Ventajas | Desventajas |
+|--------|--------|-------------|------------|----------|-------------|
+| 1 | WSL2 (Windows Subsystem for Linux) | Instalación de Linux dentro de Windows con integración directa | Windows 10/11 (2004+), virtualización activada, acceso de administrador | Rápido, liviano, buena integración con Windows, permite usar Bash, Conda, R, Python, GEE CLI | Requiere configuración previa, no soporta GUI completa como QGIS |
+| 2 | Máquina virtual con VirtualBox | Imagen de Ubuntu o similar preconfigurada para ejecutar en VirtualBox | VirtualBox instalado, mínimo 4 GB de RAM, 20 GB de espacio | Entorno uniforme para todos, se puede incluir RStudio, Python, GEE | Pesado, requiere descarga de imagen (~4–8 GB), rendimiento menor en equipos lentos |
+| 3 | USB booteable con Linux persistente | Sistema Linux completo en una memoria USB con persistencia de datos | Pendrive ≥16 GB, BIOS que permita boot desde USB | Portabilidad total, no afecta Windows, entorno preinstalado | Puede requerir desactivar Secure Boot, arranque variable según el equipo |
+
+---
+
+&lt;div style="margin-left:-2em; margin-right:-2em; font-size:85%"&gt;
+
+## Opciones para crear un entorno Linux en Windows (2)
+
+| Opción | Nombre | Descripción | Requisitos | Ventajas | Desventajas |
+|--------|--------|-------------|------------|----------|-------------|
+| 4 | Google Colab + RStudio Cloud | Entornos Linux basados en la nube accesibles por navegador | Conexión a internet estable, cuenta de Google | Sin instalación, acceso inmediato, ideal para GEE y Python, también soporta R | Dependencia total de internet, sin soporte de interfaz gráfica (e.g. QGIS) |
+| 5 | Servidor JupyterHub o RStudio Server | Acceso web a un servidor con entorno Linux centralizado | Red local o servidor en la nube, configuración previa del servidor | Control total del entorno, consistente para todos, ideal para prácticas dirigidas | Necesita configuración técnica, requiere red funcional para acceso |
+| 6 | Docker | Contenedores que simulan entornos Linux aislados dentro de Windows | Windows 10/11, Docker Desktop instalado, WSL2 habilitado | Portabilidad de entornos, reproducibilidad, fácil compartir imágenes preconfiguradas (e.g. WebODM) | Curva de aprendizaje, requiere recursos del sistema, no siempre apto para usuarios sin experiencia |
+
+---
+
+- **Casos de uso reales**
+
+  Ejemplos en investigación ambiental, educación, cartografía, análisis espacial reproducible, estaciones meteorológicas DIY, etc.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

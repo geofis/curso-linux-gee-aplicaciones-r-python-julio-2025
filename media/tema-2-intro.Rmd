@@ -1,0 +1,192 @@
+---
+title: "Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico"
+subtitle: "Tema 2. Comandos esenciales, tuberías, permisos"
+author: "José Martínez"
+institute: "Universidad Autónoma de Santo Domingo (UASD)"
+date: "Actualizado: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(message = F, warning = F)
+```
+
+class: center, middle
+background-image: url(img/fondo.jpg)
+
+# Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico
+## Tema 2. Comandos esenciales, tuberías, permisos
+### *José Martínez*
+
+---
+
+# Objetivos
+
+* Comprender la estructura jerárquica del sistema de archivos en Linux.
+
+* Familiarizarse con comandos esenciales para manipular archivos y directorios.
+
+* Usar tuberías para encadenar comandos y automatizar tareas simples.
+
+* Comprender y modificar permisos y propiedad de archivos.
+
+* Instalar software mediante `apt` o `conda`.
+
+* Editar texto y crear scripts básicos desde la terminal.
+
+---
+
+# Estructura jerárquica de archivos en Linux
+
+* Todos los archivos cuelgan de una única raíz: `/`
+
+* Estructura lógica:
+
+  * `/` raíz del sistema
+  * `/home` archivos personales
+  * `/etc` configuraciones
+  * `/bin`, `/usr/bin` comandos del sistema
+  * `/var` archivos variables (log, cache, etc.)
+  * `/tmp` archivos temporales
+
+* Usa `tree /` (si está instalado) o `ls -R /` para visualizarla
+
+---
+
+# Comandos esenciales para operar archivos
+
+```{bash, eval=F}
+    ls        # Lista archivos y carpetas
+    cd        # Cambia de directorio
+    cp        # Copia archivos
+    mv        # Mueve o renombra
+    rm        # Elimina archivos
+    mkdir     # Crea carpetas
+    touch     # Crea archivos vacíos
+    nano      # Edita archivos de texto
+```
+
+* Ejemplo práctico:
+
+```{bash, eval=F}
+    mkdir datos
+    cd datos
+    touch notas.txt
+    nano notas.txt
+```
+
+---
+
+# Búsqueda y filtrado: `grep` y `find`
+
+```{bash, eval=F}
+    grep "palabra" archivo.txt   # Filtra líneas que contienen "palabra"
+    grep -r "error" /var/log     # Busca recursivamente
+    
+    find . -name "*.csv"         # Busca archivos .csv en la carpeta actual
+    find / -type d -name "data"  # Busca directorios llamados 'data'
+```
+
+* Estos comandos permiten ubicar y examinar archivos con rapidez.
+
+---
+
+# Tuberías (pipelines)
+
+* Permiten **encadenar comandos** usando el símbolo `|`
+
+```{bash, eval=F}
+    ls -l | grep ".txt"
+    cat archivo.txt | wc -l
+    ps aux | grep firefox
+```
+
+* También pueden usarse con `cut`, `sort`, `uniq`, `head`, `tail`, etc.
+
+* Combinaciones útiles para explorar datos en bruto y generar salidas compactas.
+
+---
+
+# Permisos y usuarios
+
+* Cada archivo tiene **dueño**, **grupo** y **permisos**:
+
+```{bash, eval=F}
+    ls -l
+```
+
+* Permisos representados por `r` (lectura), `w` (escritura), `x` (ejecución):
+
+```{bash, eval=F}
+    chmod u+x script.sh       # Agrega permiso de ejecución al usuario
+    chown usuario:grupo archivo.txt  # Cambia propiedad
+```
+
+* Usa `whoami` y `groups` para saber quién eres y a qué grupo perteneces.
+
+---
+
+# Instalación de software
+
+* En distribuciones basadas en Debian/Ubuntu:
+
+```{bash, eval=F}
+    sudo apt update
+    sudo apt install htop
+```
+
+* También puedes usar **miniconda**:
+
+```{bash, eval=F}
+    conda install numpy
+```
+
+* Evita `apt` dentro de WSL2 sin respaldo de red, y evita mezclar con conda si no sabes cómo aislar entornos.
+
+---
+
+# Edición de texto desde la terminal
+
+* Usa editores como `nano`, `vim`, `micro`, `code` (si instalado)
+
+* Ejemplo con `nano`:
+
+```{bash, eval=F}
+    nano script.sh
+```
+
+```{bash, eval=F}
+#!/bin/bash
+echo "Hola, mundo"
+```
+
+* Guarda con `Ctrl + O` y `Enter`, sal con `Ctrl + X`
+
+---
+
+# Automatización con scripts
+
+* Puedes automatizar comandos repetitivos con scripts `.sh`
+
+```{bash, eval=F}
+#!/bin/bash
+echo "Copiando datos..."
+cp *.csv ~/datos/
+echo "Hecho."
+```
+
+* Haz ejecutable tu script:
+
+```{bash, eval=F}
+chmod +x script.sh
+./script.sh
+```
+
+* Estos scripts pueden incluir bucles, condiciones, y ser reutilizados en análisis espaciales.

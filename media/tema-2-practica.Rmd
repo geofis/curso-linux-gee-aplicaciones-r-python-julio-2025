@@ -1,0 +1,144 @@
+---
+title: "Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico"
+subtitle: "Tema 1. Instala y prueba una o varias distros Linux, terminal, estructura"
+author: "José Martínez"
+institute: "Universidad Autónoma de Santo Domingo (UASD)"
+date: "Actualizado: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(message = F, warning = F)
+```
+
+class: center, middle
+background-image: url(img/fondo.jpg)
+
+# Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico
+## Tema 2. Práctica. Comandos esenciales, tuberías, permisos
+### *José Martínez*
+
+---
+
+# Contenido
+
+- Crea una carpeta de práctica llamada `mi_practica` y navega dentro de ella.
+
+- Dentro de esa carpeta, crea otras dos llamadas `datos` y `scripts`.
+
+- Crea tres archivos vacíos con `touch`, y edítalos usando `nano`.
+
+- Copia y mueve archivos entre carpetas, elimina uno y recupera la estructura con `ls`, `mv`, `cp`, `rm`.
+
+- Crea un archivo de texto con varias líneas. Usa `grep`, `wc`, `sort` y `head` en combinación con `|` para extraer información.
+
+- Usa `find` para localizar archivos `.txt` dentro de la carpeta `datos`.
+
+- Explora permisos con `ls -l` y modifica permisos con `chmod`. Cambia la propiedad si tienes permisos usando `chown`.
+
+- Instala un programa desde la terminal (por ejemplo, `htop`) usando `sudo apt install`.
+
+- Crea un script llamado `saludo.sh` con el siguiente contenido:
+
+```bash
+#!/bin/bash
+echo "Hola, $(whoami). Esta es tu práctica 2."
+```
+
+- Hazlo ejecutable y ejecútalo desde la terminal.
+
+---
+
+## Crear estructura de trabajo
+
+```bash
+mkdir -p mi_practica/datos mi_practica/scripts
+cd mi_practica
+```
+
+---
+
+## Archivos y comandos básicos
+
+```bash
+touch datos/archivo1.txt datos/archivo2.txt scripts/script1.sh
+nano datos/archivo1.txt
+```
+
+```bash
+cp datos/archivo1.txt datos/copia1.txt
+mv datos/archivo2.txt datos/renombrado.txt
+rm datos/copia1.txt
+```
+
+---
+
+## Uso de tuberías y filtros
+
+```bash
+echo -e "uno\ndos\ntres\ndos\ncuatro" > datos/lista.txt
+cat datos/lista.txt | sort | uniq | wc -l
+cat datos/lista.txt | grep "dos"
+```
+
+---
+
+## Búsqueda de archivos con `find`
+
+```bash
+find datos/ -name "*.txt"
+find . -type f -size +0 -exec ls -lh {} \;
+```
+
+---
+
+## Permisos y usuarios
+
+```bash
+ls -l datos/
+chmod u+x scripts/script1.sh
+whoami
+groups
+```
+
+---
+
+## Edición y ejecución de scripts
+
+```bash
+nano scripts/saludo.sh
+```
+
+```bash
+#!/bin/bash
+echo "Hola, $(whoami). Esta es tu práctica 2."
+```
+
+```bash
+chmod +x scripts/saludo.sh
+./scripts/saludo.sh
+```
+
+---
+
+## Para realizar en casa
+
+- Crea un script que copie todos los archivos `.txt` desde la carpeta `datos/` a una nueva carpeta llamada `backup/`.
+
+- Usa `find` para buscar todos los archivos `.sh` creados en tu carpeta personal.
+
+- Explora qué hace el comando `history` y úsalo para ver tus comandos recientes.
+
+- Investiga los comandos `head`, `tail`, `cut`, y `xargs`. Prueba combinarlos con tuberías.
+
+- Aprende a usar `man` para buscar ayuda de comandos (`man grep`, `man chmod`, etc.).
+
+- Instala un segundo programa útil de consola, como `tree` o `neofetch`, y ejecútalo.
+

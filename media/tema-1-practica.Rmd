@@ -1,0 +1,131 @@
+---
+title: "Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico"
+subtitle: "Tema 1. Instala y prueba una o varias distros Linux, terminal, estructura"
+author: "José Martínez"
+institute: "Universidad Autónoma de Santo Domingo (UASD)"
+date: "Actualizado: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(message = F, warning = F)
+```
+
+class: center, middle
+background-image: url(img/fondo.jpg)
+
+# Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico
+## Tema 1. Instala y prueba una o varias distros Linux, terminal, estructura
+### *José Martínez*
+
+---
+
+# Contenido
+
+- Elige e instala una distribución Linux en tu equipo mediante alguna de estas opciones: máquina virtual, WSL2, USB booteable o instalación completa.
+  
+- Inicia sesión en tu nuevo entorno Linux y explora el entorno gráfico y el menú de aplicaciones.
+  
+- Abre una terminal y ejecuta comandos básicos como `pwd`, `ls`, `cd`, `whoami`, `uptime`.
+  
+- Navega por la estructura de directorios (`/home`, `/etc`, `/bin`, `/usr`, `/var`) y toma nota de sus funciones principales.
+  
+- Configura tu entorno inicial: cambia idioma o zona horaria si es necesario, personaliza la terminal, instala un editor de texto (como `nano` o `vim`) y verifica que puedas usar `sudo`.
+
+---
+
+## Distro
+
+- Elige e instala una distribución Linux en tu equipo mediante alguna de estas opciones:
+
+  - Máquina virtual (VirtualBox o similar)
+  
+  - WSL2 (si usas Windows 10/11)
+  
+  - USB booteable con persistencia
+  
+  - Instalación completa en un equipo secundario
+
+---
+
+## Iniciar sesión
+
+- Inicia sesión en tu nuevo entorno Linux y explora:
+
+  - El entorno gráfico (menús, configuración)
+  
+  - El menú de aplicaciones
+  
+  - El explorador de archivos
+
+---
+
+## Terminal
+
+- Abre una terminal y ejecuta algunos comandos básicos:
+
+```{bash, eval=F}
+   pwd       # Muestra la ruta actual
+   ls        # Lista los archivos
+   cd        # Cambia de directorio
+   whoami    # Muestra tu nombre de usuario
+   uptime    # Tiempo encendido del sistema
+```
+
+---
+
+## Navegar estructura
+
+- Navega por la estructura de directorios del sistema:
+
+  - `/home`: carpetas personales
+  
+  - `/etc`: configuración del sistema
+  
+  - `/bin`: programas esenciales
+  
+  - `/usr`: software y recursos compartidos
+  
+  - `/var`: archivos que cambian frecuentemente (logs, caché, etc.)
+
+---
+
+## Entorno de trabajo
+
+- Configura tu entorno de trabajo:
+
+  - Ajusta idioma y zona horaria si es necesario
+  
+  - Personaliza la terminal (color, nombre, tamaño de letra)
+  
+  - Instala un editor de texto desde la terminal:
+
+```{bash, eval=F}
+   sudo apt update
+   sudo apt install nano
+```
+
+## Actualización
+
+- Verifica si puedes usar `sudo` y actualizar el sistema. Investiga o discute en clase los comandos para realizar esta tarea.
+
+---
+
+# Para realizar en casa
+
+- Si probaste una instalación *headless* (es decir, sólo terminal) o sin entorno gráfico, prueba ahora con una distro que tenga entorno gráfico. Si fue al contrario, es decir, si instalaste una instalación con entorno gráfico, entonces ahora intenta una instalación sólo con la terminal.
+
+- Si probaste una distro en máquina virtual, intenta ahora desde USB booteable o WSL2.
+
+- Explora una segunda distro y compara su apariencia y velocidad.
+
+- Investiga qué editor de texto y qué gestor de archivos vienen por defecto.
+
+- Lee sobre la estructura de Linux con el comando `man hier`.

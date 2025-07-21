@@ -1,0 +1,71 @@
+---
+title: "Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico"
+subtitle: "Bienvenida"
+author: "José Martínez"
+institute: "Universidad Autónoma de Santo Domingo (UASD)"
+date: "Actualizado: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(message = F, warning = F)
+```
+
+class: center, middle
+background-image: url(img/fondo.jpg)
+
+# Bienvenida
+### *José Martínez*
+### Universidad Autónoma de Santo Domingo (UASD)
+
+---
+
+# ¡Bienvenidas y bienvenidos!
+
+- **Fechas**:
+
+  - FC-203: del **21, 23 y 25 de julio, 2025**, de 3 a 7 pm
+
+- **Logística**
+
+  - Baños
+  
+  - WiFi
+
+  - Aula con proyector
+
+
+- Presentación general del curso, si no se ha hecho aún
+
+- Participa activamente: ¡este es un espacio para preguntar, proponer y conectar ideas! Interrumpe al profesor sin temor
+
+---
+
+## Envíen mensaje de correo
+
+Te enviaré, a la dirección correo desde la que me escribas, una invitación para que te apunte en el foro del curso. Allí podrás realizarme consultas a mí y a tus compañeras y compañeros, y compartir información relevante.
+
+---
+
+## Calendario de oferta de formación continua
+
+Visita [este calendario](https://calendar.google.com/calendar/u/0/embed?src=c_e2675d36ebc399b645ea939b0bfdf0156c9ed9c8805219cd1cc0ef07b82d141f@group.calendar.google.com&ctz=America/Santo_Domingo), por si te interesa la oferta de formación que ofreceré durante este verano.
+
+---
+
+## Autopresentación
+
+- Nombres, apellidos.
+
+- Formación y/o área profesional.
+
+- Municipio de residencia.
+
+- Una expectativa del curso.

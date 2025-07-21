@@ -1,0 +1,80 @@
+---
+title: "Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico"
+subtitle: "Motivación"
+author: "José Martínez"
+institute: "Universidad Autónoma de Santo Domingo (UASD)"
+date: "Updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(message = F, warning = F)
+```
+
+class: center, middle
+background-image: url(img/fondo.jpg)
+
+# Linux, Google Earth Engine y aplicaciones de análisis espacial con Python y R, nivel básico
+## Motivación
+### *José Martínez*
+### Universidad Autónoma de Santo Domingo (UASD)
+
+---
+
+```{r out.width='100%', fig.height=6, eval=require('leaflet')}
+library(leaflet)
+leaflet() %>%
+  addProviderTiles(providers$Esri.WorldImagery, options = providerTileOptions(maxZoom = 21)) %>%
+  leaflet::addMiniMap() %>% 
+  setView(-69.91640, 18.45949, zoom = 17) %>%
+  leafem::addMouseCoordinates()
+```
+
+---
+
+# Motivación
+
+## ¿Por qué es importante el contenido de este curso?
+
+- La relevancia de este contenido en la academia
+
+- Aplicaciones y ejemplos
+
+---
+
+# ¿Por qué es importante el contenido de este curso?
+
+- GNU/Linux, Python, R y Google Earth Engine (GEE) son herramientas esenciales en la investigación ambiental, el análisis espacial y la ciencia reproducible.
+
+- Su uso en la academia permite:
+
+  - Enseñar fundamentos sólidos de programación y análisis de datos
+  
+  - Fomentar la autonomía tecnológica
+  
+  - Trabajar con software libre sin barreras económicas
+
+---
+
+# Aplicaciones y ejemplos
+
+- **Investigación ambiental**: monitoreo de cambios en el uso del suelo, calidad del aire, vegetación, cuerpos de agua.
+
+- **Cartografía temática**: generación de mapas con datos propios o fuentes abiertas (e.g., Sentinel-2, Landsat).
+
+- **Educación**: plataformas como RStudio y Jupyter permiten enseñar estadística, programación y geografía de forma visual e interactiva.
+
+- **Proyectos comunitarios**: estaciones meteorológicas DIY, monitoreo participativo, ciencia ciudadana.
+
+---
+
+## Aplicaciones, ejemplos
+
+Ejemplos en la propia aula, o máquinas virtuales.
